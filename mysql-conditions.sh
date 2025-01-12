@@ -18,7 +18,7 @@ then
      echo "starting the installion of mysql"
      fi
 
-     dnf install mysqllll -y
+     dnf install mysql -y
      if [ $? -eq 0 ]
      then
      echo "Mysql is installation is SUCCESS in system"
