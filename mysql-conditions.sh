@@ -17,3 +17,14 @@ then
      else
      echo "starting the installion of mysql"
      fi
+
+     dnf install mysql -y
+     if [ $? -eq 0 ]
+     then
+     echo "Mysql is installation is SUCCESS in system"
+     else
+     echo "installation failed"
+     exit 1
+     fi
+
+     dnf status mysql
