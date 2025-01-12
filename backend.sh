@@ -64,7 +64,7 @@ cd app
 #unzip the file
 unzip /tmp/backend.zip
 
-cd /app
+cd app
 
 #install npm
 npm install
