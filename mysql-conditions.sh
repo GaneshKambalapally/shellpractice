@@ -2,7 +2,7 @@
 
 #check user access
 USERID=$(id -u)
-DATE=$(date+%F)
+DATE=$($(date+%F))
 USER=$(uname)
 echo "Running the script on $DATE"
 echo "Running as $USER"
