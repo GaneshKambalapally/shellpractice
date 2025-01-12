@@ -44,6 +44,10 @@ echo "installing nodejs"
 else
       echo "already installed nodejs"
  fi
-
+#installing nodejs:20
 dnf module install nodejs:20 -y
 VALIDATION $? "failed installation of nodejs:20" "installed nodejs:20 successfully"
+
+#enabling the nodejs
+systemctl enable nodejs
+VALIDATION $? "not enabled" "enabled"
