@@ -56,4 +56,15 @@ CHECK_ROOT
  systemctl status mysqld|grep "dead"
  VALIDATION $? "mysql is  active"  "mysql is not active"
 
+ #setting up the root user to mysql
+ mysql_secure_installation --set-root-pass ExpenseApp@1
+ VALIDATION $?
+
+ #login to mysql client
+ mysql
+ VALIDATION $?
+
+ #show databes;
+ show databases;
+
 
