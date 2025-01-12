@@ -6,9 +6,9 @@
 
 #to hide username and password on screen
 echo "Enter User name::"
-read -s USERNAME
-echo "entered username is $USERNAME"
+read -s username
+echo "entered username is $username"
 echo "Enter Password::"
-read -s PASSWORD
-echo "entered password is $PASSWORD"
+read -s password
+echo "entered password is $password"
 
