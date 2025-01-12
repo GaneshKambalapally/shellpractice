@@ -2,9 +2,9 @@
 
 #check user access
 USERID=$(id -u)
-DATE=$(date++%F)
+DATE=$(date+%F)
 echo "Running the script on $DATE"
-Running as $uname
+echo "Running as $uname"
 
 if [ $USERID -ne 0 ]
 then 
