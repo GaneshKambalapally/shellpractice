@@ -16,3 +16,4 @@ then
      echo "Mysql is already installed in system"
      else
      echo "starting the installion of mysql"
+     fi
