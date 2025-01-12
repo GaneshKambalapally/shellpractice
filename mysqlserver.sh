@@ -2,14 +2,21 @@
 
 #to get userid and name
 USERID=$(id -u)
-
+mkdir -p  /var/log/mysqlserver
+LOG_FOLDER="/var/log/mysqlserver"
+SCRIPT_NAME=$(echo $0 | cut -d "." "-f1")
+TIME=$(date +%F)
+LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME.log"
+R="\e[32m
+G="\e[33m
+N="\e[34m
 
 #check root user or not
 CHECK_ROOT(){
 
     if [ $USERID -ne 0 ]
     then 
-    echo "Proceed executing the script with root user acces::Example Sudo Script.sh"
+    echo -e "Proceed executing the script with root user acces::$R Example Sudo Script.sh$N"
     exit 1
     else
     echo "Running the script with Root user access on $date"
@@ -54,6 +61,7 @@ CHECK_ROOT
 
  #check status of server
  systemctl status mysqld|grep "active"
+
  #setting up the root user to mysql
  mysql_secure_installation --set-root-pass ExpenseApp@1
  VALIDATION $?
