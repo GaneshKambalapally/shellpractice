@@ -54,6 +54,6 @@ CHECK_ROOT
 
  #check status of server
  systemctl status mysqld|grep "dead"
- VALIDATION $? "mysql is not active"  "mysql is active"
+ VALIDATION $? "mysql is  active"  "mysql is not active"
 
 
