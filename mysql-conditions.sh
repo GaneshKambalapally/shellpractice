@@ -3,8 +3,9 @@
 #check user access
 USERID=$(id -u)
 DATE=$(date+%F)
+USER=$(uname)
 echo "Running the script on $DATE"
-echo "Running as $uname"
+echo "Running as $USER"
 
 if [ $USERID -ne 0 ]
 then 
