@@ -13,7 +13,7 @@ VALIDATE()
 {
 if [ $1 -eq 0 ]
 then
-echo "command success..."
+echo "command success...$2"
 else
 echo "command failure.."
 exit 1
