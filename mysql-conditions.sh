@@ -9,3 +9,10 @@ then
    else
      echo "Running the script as a Root user"
      fi
+
+     dnf list installed mysql
+     if [ $? -ne 0 ]
+     then
+     echo "Mysql is already installed in system"
+     else
+     echo "starting the installion of mysql"
