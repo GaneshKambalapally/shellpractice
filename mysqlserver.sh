@@ -16,7 +16,7 @@ CHECK_ROOT(){
 
     if [ $USERID -ne 0 ]
     then 
-    echo -e "Proceed executing the script with root user acces::$R Example Sudo Script.sh$N"
+    echo -e "Proceed executing the script with root user acces::$R Example Sudo Scriptname.sh$N"
     exit 1
     else
     echo "Running the script with Root user access on $date"
@@ -27,10 +27,10 @@ VALIDATION(){
 
     if [ $1 -ne 0 ]
     then
- echo "Command failure....$2"
+ echo -e "$R Command failure....$N $2"
  exit 1
  else
- echo "Command success....$3"
+ echo -e "$G Command success....$N $3"
  fi
 
 }
