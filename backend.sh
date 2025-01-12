@@ -45,5 +45,5 @@ else
       echo "already installed nodejs"
  fi
 
-dnf install nodejs:20 -y
+dnf install nodejs -y
 VALIDATION $? "failed installation of nodejs:20" "installed nodejs:20 successfully"
