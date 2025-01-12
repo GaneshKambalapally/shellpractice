@@ -45,12 +45,12 @@ CHECK_ROOT
  VALIDATION $? "package not installed"  "package installed"
 
  #enable mysql server
- systemctl enable mysqld
- VALIDATION $? "package not enabled"  "package enabled"
+#  systemctl enable mysqld
+#  VALIDATION $? "package not enabled"  "package enabled"
 
- #start mysql server
- systemctl start mysqld
- VALIDATION $? "mysql not started"  "mysql started"
+#  #start mysql server
+#  systemctl start mysqld
+#  VALIDATION $? "mysql not started"  "mysql started"
 
  #check status of server
  systemctl status mysqld|grep "active"
