@@ -48,6 +48,33 @@ else
 dnf module install nodejs:20 -y
 VALIDATION $? "failed installation of nodejs:20" "installed nodejs:20 successfully"
 
-#enabling the nodejs
-systemctl module enable nodejs:20
-VALIDATION $? "not enabled" "enabled"
+#adding user to it
+useradd expense
+
+#create directory
+mkdir app
+
+#download backend code
+
+curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+
+# go to app folder
+cd /app
+
+#unzip the file
+unzip /tmp/backend.zip
+
+cd /app
+
+#install npm
+npm install
+
+cp /root/shellpractice/backend.service /etc/systemd/system/backend.service
+
+systemctl daemon-reload
+
+systemctl start backend
+
+systemctl enable backend
+
+
