@@ -52,19 +52,19 @@ VALIDATION $? "failed installation of nodejs:20" "installed nodejs:20 successful
 useradd expense
 
 #create directory
-mkdir app
+mkdir /app
 
 #download backend code
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
 
 # go to app folder
-cd app
+cd /app
 
 #unzip the file
 unzip /tmp/backend.zip
 
-cd app
+cd /app
 
 #install npm
 npm install
