@@ -2,11 +2,11 @@
 
 #to get userid and name
 USERID=$(id -u)
-mkdir -p  /var/log/mysqlserver
-LOG_FOLDER="/var/log/mysqlserver"
-SCRIPT_NAME=$(echo $0 | cut -d "." "-f1")
-TIME=$(date +%F)
-LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME.log"
+# mkdir -p  /var/log/mysqlserver
+# LOG_FOLDER="/var/log/mysqlserver"
+# SCRIPT_NAME=$(echo $0 | cut -d "." "-f1")
+# TIME=$(date +%F)
+# LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME.log"
 R="\e[32m
 G="\e[33m
 N="\e[34m
