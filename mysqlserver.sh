@@ -19,10 +19,10 @@ VALIDATION(){
 
     if [ $1 -ne 0 ]
     then
- echo "Command failure....$3"
- else
- echo "Command success....$2"
+ echo "Command failure....$2"
  exit 1
+ else
+ echo "Command success....$3"
  fi
 
 }
