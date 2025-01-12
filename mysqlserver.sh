@@ -7,9 +7,9 @@ USERID=$(id -u)
 # SCRIPT_NAME=$(echo $0 | cut -d "." "-f1")
 # TIME=$(date +%F)
 # LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME.log"
-R="\e[32m"
-G="\e[33m"
-N="\e[34m"
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 #check root user or not
 CHECK_ROOT(){
