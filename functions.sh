@@ -1,5 +1,8 @@
 #!/bin/bash
 USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
@@ -13,7 +16,7 @@ VALIDATE()
 {
 if [ $1 -eq 0 ]
 then
-echo "command success...$2"
+echo -e "command $R success $N...$2"
 else
 echo "command failure.."
 exit 1
