@@ -40,7 +40,7 @@ CHECK_ROOT
 #installation of mysql
  #check whether mysql already installed
  dnf list installed mysqld
- if [ $1 -ne 0 ]
+ if [ $? -ne 0 ]
     then
  echo "Mysql not installed....starting installation of mysql"
  else
