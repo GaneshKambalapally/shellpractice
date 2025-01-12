@@ -18,7 +18,7 @@ then
      echo "starting the installion of mysql"
      fi
 
-     dnf install mysql -y
+     dnf install mysqllll -y
      if [ $? -eq 0 ]
      then
      echo "Mysql is installation is SUCCESS in system"
@@ -27,4 +27,4 @@ then
      exit 1
      fi
 
-     dnf status mysql
+     systemctl enable mysqld
