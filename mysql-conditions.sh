@@ -2,6 +2,10 @@
 
 #check user access
 USERID=$(id -u)
+DATE=$(date++%F)
+echo "Running the script on $DATE"
+Running as $uname
+
 if [ $USERID -ne 0 ]
 then 
    echo "Run the script with Root user access/prvilaged access"
@@ -26,5 +30,3 @@ then
      echo "installation failed"
      exit 1
      fi
-
-     systemctl start mysql
