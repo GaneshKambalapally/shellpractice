@@ -53,9 +53,7 @@ CHECK_ROOT
  VALIDATION $? "mysql not started"  "mysql started"
 
  #check status of server
- systemctl status mysqld|grep "dead"
- VALIDATION $? "mysql is  active"  "mysql is not active"
-
+ systemctl status mysqld|grep "active"
  #setting up the root user to mysql
  mysql_secure_installation --set-root-pass ExpenseApp@1
  VALIDATION $?
