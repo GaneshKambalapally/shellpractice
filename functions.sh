@@ -16,7 +16,7 @@ VALIDATE()
 {
 if [ $1 -eq 0 ]
 then
-echo -e "command $R success $N...$2"
+echo -e "command $G success $N...$2"
 else
 echo "command failure.."
 exit 1
