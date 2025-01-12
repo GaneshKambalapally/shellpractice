@@ -5,7 +5,7 @@ USERID=$(id -u)
 mkdir -p  /var/log/mysqlserver
 LOG_FOLDER="/var/log/mysqlserver"
 SCRIPT_NAME=$(echo $0 | cut -d "." "-f1")
-TIME=$(date +%F)
+TIME=$(date +%F-%H-%M-%S)
 LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME.log"
 R="\e[31m"
 G="\e[32m"
