@@ -39,7 +39,7 @@ CHECK_ROOT
 
 #installation of mysql
  #check whether mysql already installed
- dnf list installed mysqld & >>$LOG_FILE
+ dnf list installed mysqld &>>$LOG_FILE
  if [ $? -ne 0 ]
  then
  echo "Mysql already installed"
@@ -48,22 +48,22 @@ CHECK_ROOT
  fi
  
  #installation of mysql-server
- dnf install mysql-server -y & >>$LOG_FILE
+ dnf install mysql-server -y &>>$LOG_FILE
  VALIDATION $? "package not installed"  "package installed"
 
  #enable mysql server
- systemctl enable mysqld & >>$LOG_FILE
+ systemctl enable mysqld &>>$LOG_FILE
  VALIDATION $? "package not enabled"  "package enabled"
 
 #  #start mysql server
- systemctl start mysqld & >>$LOG_FILE
+ systemctl start mysqld &>>$LOG_FILE
  VALIDATION $? "mysql not started"  "mysql started"
 
  #check status of server
  systemctl status mysqld|grep "active"
 
  #setting up the root user to mysql
- mysql_secure_installation --set-root-pass ExpenseApp@1 & >>$LOG_FILE
+ mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOG_FILE
  VALIDATION $?
 
  #login to mysql client
