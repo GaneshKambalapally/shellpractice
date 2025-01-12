@@ -2,11 +2,11 @@
 
 #to get userid and name
 USERID=$(id -u)
-# mkdir -p  /var/log/mysqlserver
-# LOG_FOLDER="/var/log/mysqlserver"
-# SCRIPT_NAME=$(echo $0 | cut -d "." "-f1")
-# TIME=$(date +%F)
-# LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME.log"
+mkdir -p  /var/log/mysqlserver
+LOG_FOLDER="/var/log/mysqlserver"
+SCRIPT_NAME=$(echo $0 | cut -d "." "-f1")
+TIME=$(date +%F)
+LOG_FILE="$LOG_FOLDER/$SCRIPT_NAME-$TIME.log"
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -39,7 +39,7 @@ CHECK_ROOT
 
 #installation of mysql
  #check whether mysql already installed
- dnf list installed mysqld
+ dnf list installed mysqld & >>$LOG_FILE
  if [ $? -ne 0 ]
  then
  echo "Mysql already installed"
@@ -48,22 +48,22 @@ CHECK_ROOT
  fi
  
  #installation of mysql-server
- dnf install mysql-server -y
+ dnf install mysql-server -y & >>$LOG_FILE
  VALIDATION $? "package not installed"  "package installed"
 
  #enable mysql server
- systemctl enable mysqld
+ systemctl enable mysqld & >>$LOG_FILE
  VALIDATION $? "package not enabled"  "package enabled"
 
 #  #start mysql server
- systemctl start mysqld
+ systemctl start mysqld & >>$LOG_FILE
  VALIDATION $? "mysql not started"  "mysql started"
 
  #check status of server
  systemctl status mysqld|grep "active"
 
  #setting up the root user to mysql
- mysql_secure_installation --set-root-pass ExpenseApp@1
+ mysql_secure_installation --set-root-pass ExpenseApp@1 & >>$LOG_FILE
  VALIDATION $?
 
  #login to mysql client
