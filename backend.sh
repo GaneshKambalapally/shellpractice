@@ -81,7 +81,7 @@ systemctl enable backend
 dnf install mysql -y
 
 #set password for mysql
-mysql -h 172.31.92.28 -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h 172.31.92.28 -uroot -pExpenseApp@1 < /schema/backend.sql
 
 #restart service
 systemctl restart backend
