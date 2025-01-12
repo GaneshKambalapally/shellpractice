@@ -49,5 +49,5 @@ dnf module install nodejs:20 -y
 VALIDATION $? "failed installation of nodejs:20" "installed nodejs:20 successfully"
 
 #enabling the nodejs
-systemctl enable nodejs
+systemctl module enable nodejs:20 -y
 VALIDATION $? "not enabled" "enabled"
