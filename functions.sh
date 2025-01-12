@@ -24,7 +24,7 @@ fi
 CHECK_ROOT
 
 dnf list installed mysql
-if [ $? -eq 0 ]
+if [ $? -ne 0 ]
 then
 echo "Installing mysql"
 else
