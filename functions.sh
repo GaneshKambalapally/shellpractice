@@ -7,6 +7,7 @@ CHECK_ROOT(){
     echo "RUn the script with root access"
     else
     echo "running the script"
+    fi
 }
 
 CHECK_ROOT
