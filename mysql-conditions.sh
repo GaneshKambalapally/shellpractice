@@ -27,4 +27,4 @@ then
      exit 1
      fi
 
-     systemctl enable mysqld
+     systemctl start mysql
