@@ -32,8 +32,27 @@ CHECK_ROOT
 #installation of mysql
  #check whether mysql already installed
  dnf list installed mysqld
- VALIDATION $? "mysql not installed" "mysql already installed"
-
+ if [ $1 -ne 0 ]
+    then
+ echo "Mysql not installed....starting installation of mysql"
+ else
+ echo "Mysql already installed..."
+ fi
+ 
  #installation of mysql-server
  dnf install mysql-server -y
- 
+ VALIDATION $? "package not installed"  "package installed"
+
+ #enable mysql server
+ systemctl enable mysqld
+ VALIDATION $? "package not enabled"  "package enabled"
+
+ #start mysql server
+ systemctl start mysqld
+ VALIDATION $? "mysql not started"  "mysql started"
+
+ #check status of server
+ systemctl status mysqld|grep "active"
+ VALIDATION $? "mysql is not active"  "mysql is active"
+
+
