@@ -38,7 +38,7 @@ VALIDATION(){
 CHECK_ROOT
 #checking the installed version packeges of nodejs
 dnf list installed nodejs
-if[$? -ne 0]
+if [ $? -ne 0 ]
 then
 echo "installing nodejs"
 else
