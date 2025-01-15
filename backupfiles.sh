@@ -14,3 +14,10 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +7)
 
 echo "Files are :$FILES"
 
+while IFS= read -r line;
+do
+    echo "deleting file $line"
+    rm -rf $line
+done <<< “$FILES”
+
+
