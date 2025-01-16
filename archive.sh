@@ -20,4 +20,4 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +7)
 
 echo "Files are :$FILES"
 
- find $SOURCE_DIR -name "*.log" -mtime +7 | zip "$DESTINATION_DIR.zip" -@
+ find $SOURCE_DIR -name "*.log" -mtime +7 | zip "$DESTINATION_DIR/sample.zip" -@
