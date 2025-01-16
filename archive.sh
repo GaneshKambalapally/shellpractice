@@ -23,3 +23,9 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +7)
 echo "Files are :$FILES"
 
  find $SOURCE_DIR -name "*.log" -mtime +7 | zip "$DESTINATION_DIR/sample-$TIMESTAMP.zip" -@
+
+ while IFS= read -r line
+do
+    echo "deleting file $line"
+    rm -rf $line
+done <<< $FILES
