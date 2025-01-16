@@ -1,6 +1,6 @@
 #!/bin/bash/
 
-SOURCE_DIR="/home/ec2-user/backup"
+SOURCE_DIR="/home/ec2-user/shellpractice/backup"
 
 if [ -d $SOURCE_DIR ]
 then
