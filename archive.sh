@@ -3,6 +3,7 @@
 SOURCE_DIR=/home/ec2-user/sourcedir
 DESTINATION_DIR=/home/ec2-user/destinationdir
 TIMESTAMP="$date +%M-%H-%S"
+File=$($0|cut -d "." -f1)
 
 if [ -d $SOURCE_DIR ]
 then echo "source is exist"
@@ -21,4 +22,4 @@ FILES=$(find $SOURCE_DIR -name "*.log" -mtime +7)
 
 echo "Files are :$FILES"
 
- $FILES | zip "$DESTINATION_DIR/$0-$TIMESTAMP.zip" -@
+ find $SOURCE_DIR -name "*.log" -mtime +7 | zip "$DESTINATION_DIR/$File-$TIMESTAMP.zip" -@
