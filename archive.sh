@@ -19,3 +19,5 @@ fi
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +7)
 
 echo "Files are :$FILES"
+
+$FILES | zip $DESTINATION_DIR -@
