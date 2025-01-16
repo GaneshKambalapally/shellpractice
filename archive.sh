@@ -2,7 +2,7 @@
 
 SOURCE_DIR=/home/ec2-user/sourcedir
 DESTINATION_DIR=/home/ec2-user/destinationdir
-TIMESTAMP=$(date +"%m-%d-%Y-%H-%M-%S")
+TIMESTAMP=$(date +"%m-%d-%Y")
 # File=$($0|cut -d "." -f1)
 
 if [ -d $SOURCE_DIR ]
